@@ -9,6 +9,8 @@ import App from './components/app';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
+const identityReducer = (state = null) => state;
+
 const initialState = {
   messages: [],
   channels: ['general', 'react', 'paris'],
@@ -17,7 +19,10 @@ const initialState = {
 };
 
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state
+  messages: identityReducer,
+  channels: identityReducer,
+  selectedChannel: identityReducer,
+  currentUser: identityReducer
 });
 
 // render an instance of the component in the DOM
