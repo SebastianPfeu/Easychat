@@ -13,7 +13,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^3.2.3",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^7.0.1",
@@ -36,6 +36,9 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
+    "predeploy": "npm run build",
+    "build": "webpack",
     "deploy": "webpack -p && gh-pages -d dist"
-  }
+  },
+  "homepage": "https://sebastianpfeu.github.io/Easychat"
 }
