@@ -40,15 +40,15 @@ class MessageForm extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createMessage }, dispatch);
-}
-
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
     selectedChannel: state.selectedChannel
   };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ createMessage }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);

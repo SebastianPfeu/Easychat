@@ -10,6 +10,7 @@ import reduxPromise from 'redux-promise';
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
 import messagesReducer from './reducers/messages_reducer';
+import selectedChannelReducer from './reducers/selected_channel_reducer';
 
 // State and reducers
 const identityReducer = (state = null) => state;
@@ -24,7 +25,7 @@ const initialState = {
 const reducers = combineReducers({
   messages: messagesReducer,
   channels: identityReducer,
-  selectedChannel: identityReducer,
+  selectedChannel: selectedChannelReducer,
   currentUser: identityReducer
 });
 
