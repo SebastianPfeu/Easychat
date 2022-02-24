@@ -1,6 +1,6 @@
 # Easychat
 
-Easychat is a multi-channel chat application using React and Redux that allows its users to post messages in various channels.
+Easychat is a multi-channel chat application using React and Redux that allows its users to post messages in different channels.
 
 The application is hosted <a href="https://sebastianpfeu.github.io/Easychat/" target="_blank">here</a>.
 
