@@ -9,6 +9,10 @@ class MessageForm extends Component {
     this.state = { value: '' };
   }
 
+  componentDidMount() {
+    this.messageBox.focus();
+  }
+
   handleChange = (event) => {
     this.setState({ value: event.target.value });
   }
@@ -23,6 +27,7 @@ class MessageForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="channel-editor">
         <input
+          ref={(input) => { this.messageBox = input; }}
           type="text"
           className="form-control"
           autoComplete="off"
@@ -39,4 +44,11 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ createMessage }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(MessageForm);
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser,
+    selectedChannel: state.selectedChannel
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);
